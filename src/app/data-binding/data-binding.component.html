@@ -1,0 +1,73 @@
+<!-- <section class="property-binding">
+
+  <article>
+    <h3>Interpolation</h3>
+    <p>String renderizada com interpolação: {{ url }}</p>
+  </article>
+
+  <article>
+    <h3>Property Binding</h3>
+    <img src="{{ urlImage }}">
+
+    <h3>Property Binding</h3>
+    <img [src]="urlImage">
+
+    <h3>Property Binding</h3>
+    <img bind-src="urlImage">
+  </article>
+
+  <article>
+    <h3>
+      <div>
+        Selecionando uma classe
+        <select #classe (change)="0">
+          <option value="alert-success">Sucesso</option>
+          <option value="alert-info">Info</option>
+          <option value="alert-warning">Warning</option>
+          <option value="alert-danger">Erro</option>
+        </select>
+        <br><br>
+
+        <div class="alert {{ classe.value }}" role="alert">
+          Texto com cor de acordo com o valor do combobox.
+        </div>
+
+        <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">Sucesso</div>
+        <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">Info</div>
+        <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">Warning</div>
+        <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">Erro</div>
+      </div>
+    </h3>
+  </article>
+
+</section> -->
+
+
+<section class="event-binding">
+  <article>
+    <h3>Event binding</h3>
+      <div>
+        <button (click)="botaoClicado()" class="btn btn-primary">Clique aqui</button>
+        <br><br>
+
+        <input type="text"
+          (keyup)="onKeyUp($event)"
+          (keup.enter)="salvarValor(campoInput.value)"
+          (blur)="salvarValor(campoInput.value)"
+          #campoInput/>
+
+          <p>Valor atual: {{ valorAtual }}</p>
+          <p>Valor salvo: {{ valorSalvo }}</p>
+          <br>
+
+          <span
+            (mouseover)="onMouseOverOut()"
+            (mouseout)="onMouseOverOut()"
+            [class.highlight]="isMouseOver"
+            >
+            Passe o mouse aqui
+          </span>
+      </div>
+  </article>
+
+</section>
